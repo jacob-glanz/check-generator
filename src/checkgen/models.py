@@ -1,6 +1,7 @@
 from num2words import num2words
 from num2words.currency import parse_currency_parts
 
+# https://www.reddit.com/r/Python/comments/239cv3/if_were_all_consenting_adults_does_it_make_sense/ 💪💪💪💪💪
 
 class Bank:
     def __init__(self, name, routing_number):
@@ -29,7 +30,7 @@ class Payment:
 
     @property
     def date(self):
-        return self._date.strftime('%-m/%-d/%Y')
+        return f"{self._date.month}/{self._date.day}/{self._date.year}"
 
     def written_amount(self):
         dollars, cents, _ = parse_currency_parts(self._amount, is_int_with_cents=False)
